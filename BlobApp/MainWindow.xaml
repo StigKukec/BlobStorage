@@ -1,0 +1,29 @@
+﻿<Window x:Class="BlobApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BlobApp"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="475" Width="800">
+    <Grid Background="{StaticResource GradientBackground}">
+        <ListBox x:Name="lbItems" DisplayMemberPath="Name" SelectionChanged="LbItems_SelectionChanged" Margin="61,40,497,93" />
+        <Label Content="Choose directory:" Background="Black" Margin="61,10,637,400"></Label>
+        <ComboBox x:Name="cbDirectories" IsEditable="True" KeyDown="CbDirectories_KeyDown" TextBoxBase.TextChanged="CbDirectories_TextChanged" Margin="168,16,497,399"></ComboBox>
+        <Button x:Name="btnUpload" Click="BtnUpload_Click" Background="Black" Content="Upload" Margin="119,367,545,36"></Button>
+        <Button x:Name="btnDownload" Click="BtnDownload_Click"  Background="Black" Content="Download" Margin="332,367,332,36"></Button>
+        <Button x:Name="btnDelete" Click="BtnDelete_Click"  Background="Black" Content="Delete" Margin="541,367,123,36"></Button>
+        <Label Content="Content type:" Background="Black" Margin="349,54,349,356"/>
+        <TextBox HorizontalAlignment="Left" Margin="467,54,0,0" TextWrapping="Wrap" Text="{Binding Properties.ContentType, Mode=OneWay}" VerticalAlignment="Top" Width="280" Height="24"/>
+        <Label Content="Content size:" Background="Black" Margin="349,109,349,301"/>
+        <TextBox HorizontalAlignment="Left" Margin="467,109,0,0" TextWrapping="Wrap" Text="{Binding Properties.ContentLength, Mode=OneWay}" VerticalAlignment="Top" Width="280" Height="24"/>
+        <Label Content="Date created:" Background="Black" Margin="349,168,349,242"/>
+        <TextBox HorizontalAlignment="Left" Margin="467,168,0,0" TextWrapping="Wrap" Text="{Binding Properties.CreatedOn, Mode=OneWay}" VerticalAlignment="Top" Width="280" Height="24"/>
+        <Label Content="Last modified:" Background="Black" Margin="349,226,349,184"/>
+        <TextBox HorizontalAlignment="Left" Margin="467,226,0,0" TextWrapping="Wrap" Text="{Binding Properties.LastModified, Mode=OneWay}" VerticalAlignment="Top" Width="280" Height="24"/>
+        <Label Content="Server encrypted:" Background="Black" Margin="349,287,349,123"/>
+        <TextBox HorizontalAlignment="Left" Margin="467,287,0,0" TextWrapping="Wrap" Text="{Binding Properties.ServerEncrypted, Mode=OneWay}" VerticalAlignment="Top" Width="104" Height="24"/>
+
+    </Grid>
+</Window>
